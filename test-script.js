@@ -24,4 +24,4 @@ childProcess.on('exit', (code, signal) => {
     core.setFailed(`child process exited with code ${code} and signal ${signal}`);
     return;
   }
-}
+});
