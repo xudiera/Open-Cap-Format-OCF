@@ -26,7 +26,7 @@ if (childProcess.stderr !== null) {
 
 childProcess.on("exit", (code, signal) => {
   if (code || signal) {
-    console.log(`child process exited with code ${code} and signal ${signal}`);
-    //core.setFailed(`child process exited with code ${code} and signal ${signal}`);
+    //console.log(`child process exited with code ${code} and signal ${signal}`);
+    core.setFailed(`child process exited with code ${code} and signal ${signal}`);
   }
 });
