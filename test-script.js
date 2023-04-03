@@ -20,7 +20,6 @@ var childProcess = spawn("node", args, { stdio: "inherit" });
 
 childProcess.on('exit', (code, signal) => {
   if (code || signal) {
-    logger.error(`child process exited with code ${code} and signal ${signal}`);
     core.setFailed(`child process exited with code ${code} and signal ${signal}`);
     return;
   }
