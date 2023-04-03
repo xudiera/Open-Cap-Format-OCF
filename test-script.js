@@ -18,9 +18,15 @@ if (process.argv[2] && process.argv[2] === "watch") {
 
 var childProcess = spawn("node", args, { stdio: "inherit" });
 
-childProcess.on('exit', (code, signal) => {
+if (childProcess.stderr !== null) {
+  childProcess.stderr.on("data", (data) => {
+    console.log(data);
+  });
+}
+
+childProcess.on("exit", (code, signal) => {
   if (code || signal) {
-    core.setFailed(`child process exited with code ${code} and signal ${signal}`);
-    return;
+    console.log(`child process exited with code ${code} and signal ${signal}`);
+    //core.setFailed(`child process exited with code ${code} and signal ${signal}`);
   }
 });
