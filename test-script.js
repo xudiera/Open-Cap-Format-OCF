@@ -16,4 +16,12 @@ if (process.argv[2] && process.argv[2] === "watch") {
   args.push("--watch");
 }
 
-spawn("node", args, { stdio: "inherit" });
+var childProcess = spawn("node", args, { stdio: "inherit" });
+
+childProcess.on('exit', (code, signal) => {
+  if (code) {
+    console.error('Child exited with code', code)
+  } else if (signal) {
+    console.error('Child was killed with signal', signal);
+  }
+});
