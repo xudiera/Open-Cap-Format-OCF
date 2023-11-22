@@ -29,3 +29,4 @@ watchdog==2.1.9
 wcmatch==8.4.1
 zipp==3.9.0
 git+https://github.com/Andre601/mkdocs-pagenav-generator
+mike
