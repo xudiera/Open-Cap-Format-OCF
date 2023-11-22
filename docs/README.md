@@ -27,3 +27,5 @@ OCF's schema is defined in our JSON Schemas, which can be found in the /schema f
 ## Contributors (alphabetical)
 
 Please see the Open Cap Table Coalition Website or our GitHub Code Contributors List.
+
+v1.1
